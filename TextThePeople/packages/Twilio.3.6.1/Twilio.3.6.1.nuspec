@@ -3,6 +3,7 @@
   <metadata>
     <id>Twilio</id>
     <version>3.6.1</version>
+    <title>Twilio</title>
     <authors>Twilio</authors>
     <owners>Twilio</owners>
     <licenseUrl>https://github.com/twilio/twilio-csharp/blob/master/LICENSE.txt</licenseUrl>
@@ -64,6 +65,7 @@
       Fixed incorrect paging parameter name.
 
       * 3.2.3 - Added 'extension' parameter to the AddOutgoingCallerIds method</releaseNotes>
+    <copyright />
     <language>en-US</language>
     <tags>REST SMS voice telephony phone twilio twiml ASPNETWEBPAGES</tags>
     <dependencies>

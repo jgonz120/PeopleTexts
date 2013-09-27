@@ -3,6 +3,7 @@
   <metadata>
     <id>Twilio.TwiML</id>
     <version>3.3.2</version>
+    <title>Twilio.TwiML</title>
     <authors>Twilio</authors>
     <owners>Twilio</owners>
     <licenseUrl>https://github.com/twilio/twilio-csharp/blob/master/LICENSE.txt</licenseUrl>
@@ -17,6 +18,7 @@
       * 3.3.0 - Adding Sip
       * 3.2.0 - Adding Queue Verb
       Adding document comments</releaseNotes>
+    <copyright />
     <language>en-US</language>
     <tags>REST SMS voice telephony phone twilio twiml</tags>
     <references>
