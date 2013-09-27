@@ -216,11 +216,13 @@ ul#menu {
 
     .featured .content-wrapper {
         background-color: #A8A8A8;
-        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
-        background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+
+        /*background-image: -ms-linear-gradient(left, #A8A8A8 0%, #DBDBDB 100%);
+        background-image: -o-linear-gradient(left, #A8A8A8 0%, #DBDBDB 100%);
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #A8A8A8), color-stop(1, #DBDBDB));
+        background-image: -webkit-linear-gradient(left, #A8A8A8 0%, #DBDBDB 100%);
+        background-image: linear-gradient(left, #A8A8A8 0%, #DBDBDB 100%);*/
+
         color: #000;
         padding: 20px 40px 30px 40px;
     }
@@ -442,7 +444,7 @@ textarea {
 }
 
     input:focus, textarea:focus {
-        border: 1px solid #7ac0da;
+        border: 1px solid #A8A8A8;
     }
 
     input[type="checkbox"] {
@@ -488,7 +490,7 @@ textarea {
 }
 
 .message-success {
-    color: #7ac0da;
+    color: #A8A8A8;
     font-size: 1.3em;
     font-weight: bold;
     margin: 20px 0 10px 0;
