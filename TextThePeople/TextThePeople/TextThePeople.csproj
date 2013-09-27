@@ -306,15 +306,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-<<<<<<< HEAD
     <Content Include="Views\Shared\_LoginForm.cshtml" />
-=======
     <Content Include="Views\Persons\Index.cshtml" />
     <Content Include="Views\Persons\Details.cshtml" />
     <Content Include="Views\Persons\Create.cshtml" />
     <Content Include="Views\Persons\Edit.cshtml" />
     <Content Include="Views\Persons\Delete.cshtml" />
->>>>>>> 21cc35f25c0807fce9e5ce6930e264ee0d186b0c
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
