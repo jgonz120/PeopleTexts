@@ -424,6 +424,13 @@ label {
     display: block;
     font-size: 1.2em;
     font-weight: 600;
+    
+}
+
+.editor-label {
+    font-size: 14px;
+    /*border-bottom: 1px thin #333;*/
+    padding: 3px 0 5px 0;
 }
 
 label.checkbox {
@@ -541,10 +548,10 @@ table {
 }
 
 th {
-    font-size: 1.2em;
+    font-size: 14pt;
     text-align: left;
-    border: none 0px;
-    padding-left: 0;
+    border-bottom: 1px inset #333 ;
+    padding: 0 15px 2px 0;
 }
 
     th a {
@@ -741,6 +748,8 @@ tr.pager td {
         float: none;
         width: auto;
     }
+
+
 
 
     /* footer

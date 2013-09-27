@@ -9,7 +9,11 @@ namespace TextThePeople.Models
     {
         public int PersonsId { get; set; }
         public int OSEntityPK { get; set; }
+
+
         public string PhoneNumber { get; set; }
+
+
         public virtual ICollection<Logs> Logs { get; set; }
 
     }
