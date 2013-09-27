@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>TwilioFluent.TwiML</id>
+    <version>1.0.1.0</version>
+    <title>TwilioFluent.TwiML</title>
+    <authors>Nicholas Sivo</authors>
+    <owners>Nicholas Sivo</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://bitbucket.org/kogir/twiliofluent</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>A helper library that makes generating valid TwilML responses and handling Twilio requests incredibly easy.</description>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>SMS voice telephony phone twilio twiml</tags>
+    <dependencies>
+      <dependency id="libphonenumber-csharp" version="4.4.0.1" />
+    </dependencies>
+    <references>
+      <reference file="TwilioFluent.TwiML.dll" />
+    </references>
+  </metadata>
+</package>
