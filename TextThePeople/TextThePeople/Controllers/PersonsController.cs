@@ -78,7 +78,7 @@ namespace TextThePeople.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Persons persons)
+        public ActionResult Edit( Persons persons)
         {
             if (ModelState.IsValid)
             {
