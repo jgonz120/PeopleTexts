@@ -1,0 +1,18 @@
+diff a/TextThePeople/TextThePeople/TextThePeople.csproj b/TextThePeople/TextThePeople/TextThePeople.csproj	(rejected hunks)
+@@ -213,15 +213,11 @@
+     <Compile Include="App_Start\WebApiConfig.cs" />
+     <Compile Include="Controllers\AccountController.cs" />
+     <Compile Include="Controllers\HomeController.cs" />
+-    <Compile Include="Controllers\PersonsController.cs" />
+-    <Compile Include="DAL\TextThePeopleContext.cs" />
++    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+     <Compile Include="Global.asax.cs">
+       <DependentUpon>Global.asax</DependentUpon>
+     </Compile>
+-    <Compile Include="Migrations\Configuration.cs" />
+     <Compile Include="Models\AccountModels.cs" />
+-    <Compile Include="Models\Logs.cs" />
+-    <Compile Include="Models\Persons.cs" />
+     <Compile Include="Properties\AssemblyInfo.cs" />
+   </ItemGroup>
+   <ItemGroup>

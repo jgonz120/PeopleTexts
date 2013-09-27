@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>libphonenumber-csharp</id>
+    <version>4.4.0.1</version>
+    <authors>Patrick Mézard,  Google,  libphonenumber contributors</authors>
+    <owners>Patrick Mézard,  Google,  libphonenumber contributors</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://bitbucket.org/pmezard/libphonenumber-csharp/wiki/Home</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>C# port of Google's common Java, C++ and Javascript library for parsing, formatting, storing and validating international phone numbers.
+		For usage samples: http://code.google.com/p/libphonenumber/</description>
+    <tags>phonenumber phone</tags>
+    <references>
+      <reference file="PhoneNumbers.dll" />
+    </references>
+  </metadata>
+</package>
