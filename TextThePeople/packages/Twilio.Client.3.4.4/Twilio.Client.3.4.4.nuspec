@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Twilio.Client</id>
+    <version>3.4.4</version>
+    <title>Twilio.Client</title>
+    <authors>Twilio</authors>
+    <owners>Twilio</owners>
+    <licenseUrl>https://github.com/twilio/twilio-csharp/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>http://github.com/twilio/twilio-csharp</projectUrl>
+    <iconUrl>http://www.twilio.com/packages/company/img/logos_downloadable_round.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Twilio Client capability token generator for use with the Twilio Client for browsers JavaScript SDK.</description>
+    <releaseNotes>* 3.4.4 - Fixing bad build
+      * 3.4.3 - Updated JWT reference
+      * 3.4.2 - Removed dependancy of JSON, updated reference to JWT
+      * 3.4.1 - Updated to JSON.NET 4.5
+      * 3.3.5 - Updated to JSON.NET 4.0.8. Normalizing version number with Twilio.Api
+      * 3.1.4 - Updated to JSON.NET 4.0.7</releaseNotes>
+    <copyright />
+    <language>en-US</language>
+    <tags>REST SMS voice telephony phone twilio twiml</tags>
+    <dependencies>
+      <dependency id="JWT" />
+    </dependencies>
+    <references>
+      <reference file="Twilio.Client.Capability.dll" />
+    </references>
+  </metadata>
+</package>
