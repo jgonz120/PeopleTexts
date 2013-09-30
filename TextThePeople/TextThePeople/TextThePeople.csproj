@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201309301508438_AddDataAnnotationsMig.Designer.cs">
       <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.cs" />
+    <Compile Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.Designer.cs">
+      <DependentUpon>201309301559191_ConnectLoginDatabaseToServer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\TwilioAccountInfo.cs" />
     <Compile Include="DAL\TextThePeopleContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -378,7 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201309301508438_AddDataAnnotationsMig.resx">
       <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
-
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.resx">
+      <DependentUpon>201309301559191_ConnectLoginDatabaseToServer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
