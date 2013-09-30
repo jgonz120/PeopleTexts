@@ -349,6 +349,7 @@
     <Content Include="Views\Persons\Edit.cshtml" />
     <Content Include="Views\Persons\Delete.cshtml" />
     <Content Include="Views\Error\PageNotFound.cshtml" />
+    <Content Include="Views\Persons\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
