@@ -15,13 +15,23 @@
 
         @Html.HiddenFor(model => model.PersonsId)
         @Html.HiddenFor(model => model.OSEntityPK)
+        @Html.HiddenFor(model => model.PersonType)
         <div class="editor-label">
             @Html.LabelFor(model => model.OSEntityPK)
         </div>
         <div class="editor-label" style="font-weight: bold;">
             @Html.DisplayFor(model => model.OSEntityPK)
         </div>
-
+        <div class="editor-label" style="font-weight: bold;">
+            Client Type: <br />
+            @if (Model.PersonType == 1)
+            { 
+                <p>Property Owner</p>
+            }
+            else { 
+                <p>Tennant</p>
+            }
+        </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.PhoneNumber)
         </div>

@@ -22,8 +22,8 @@ namespace TextThePeople.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            ViewBag.ReturnUrl = returnUrl;
-            return View();
+            ViewBag.ReturnUrl = "Persons/Index";
+            return View() ;
         }
 
         //
@@ -36,7 +36,7 @@ namespace TextThePeople.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
-                return RedirectToLocal(returnUrl);
+                return RedirectToLocal("Persons");
             }
 
             // If we got this far, something failed, redisplay form
@@ -80,7 +80,7 @@ namespace TextThePeople.Controllers
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Persons");
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -336,7 +336,7 @@ namespace TextThePeople.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Persons");
             }
         }
 
