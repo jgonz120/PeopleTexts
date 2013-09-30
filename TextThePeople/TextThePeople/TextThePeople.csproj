@@ -211,6 +211,7 @@
     <Compile Include="Migrations\201309301508438_AddDataAnnotationsMig.Designer.cs">
       <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\MessageDataDTO.cs" />
     <Compile Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.cs" />
     <Compile Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.Designer.cs">
       <DependentUpon>201309301559191_ConnectLoginDatabaseToServer.cs</DependentUpon>
