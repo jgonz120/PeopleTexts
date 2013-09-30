@@ -13,6 +13,7 @@ namespace TextThePeople.Models
 
         public string PhoneNumber { get; set; }
 
+        public int PersonType { get; set; }
 
         public virtual ICollection<Logs> Logs { get; set; }
 
