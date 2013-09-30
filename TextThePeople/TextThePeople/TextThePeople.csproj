@@ -211,7 +211,14 @@
     <Compile Include="Migrations\201309301508438_AddDataAnnotationsMig.Designer.cs">
       <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Models\MessageDataDTO.cs" />
+=======
+    <Compile Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.cs" />
+    <Compile Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.Designer.cs">
+      <DependentUpon>201309301559191_ConnectLoginDatabaseToServer.cs</DependentUpon>
+    </Compile>
+>>>>>>> e9207b5280a98ce043fb19463d6d03687b7c020c
     <Compile Include="Models\TwilioAccountInfo.cs" />
     <Compile Include="DAL\TextThePeopleContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -224,6 +231,10 @@
     <Compile Include="Migrations\201309301410557_NoNullsInPersonType.cs" />
     <Compile Include="Migrations\201309301410557_NoNullsInPersonType.Designer.cs">
       <DependentUpon>201309301410557_NoNullsInPersonType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309301524092_ConnectToLoginDB.cs" />
+    <Compile Include="Migrations\201309301524092_ConnectToLoginDB.Designer.cs">
+      <DependentUpon>201309301524092_ConnectToLoginDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -358,7 +369,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Filters\" />
+    <Folder Include="Migrations\Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -370,8 +381,14 @@
     <EmbeddedResource Include="Migrations\201309301410557_NoNullsInPersonType.resx">
       <DependentUpon>201309301410557_NoNullsInPersonType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309301524092_ConnectToLoginDB.resx">
+      <DependentUpon>201309301524092_ConnectToLoginDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201309301508438_AddDataAnnotationsMig.resx">
       <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.resx">
+      <DependentUpon>201309301559191_ConnectLoginDatabaseToServer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

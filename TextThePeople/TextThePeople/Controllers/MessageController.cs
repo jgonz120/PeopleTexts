@@ -22,7 +22,7 @@ namespace TextThePeople.Controllers
             {"+19548839514", new TwilioAccountInfo(){Phone = "+19548839514", AccountSid = "ACd3277fec1228d5c50bd66dc910be1822 ", AuthToken = "f8b8e5cfe71b5fc1fac20109105555b2"}}, // laura
         };
 
-        private string[] _numbers = new[] { "+13059096944", "+19542411967", "+17862320454", "+19548839514" };
+        private string[] _numbers = new[] { "+13059096945", "+19542411967", "+17862320454", "+19548839514" };
 
         public MessageController()
         {
