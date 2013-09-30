@@ -211,6 +211,7 @@
     <Compile Include="Migrations\201309301508438_AddDataAnnotationsMig.Designer.cs">
       <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\MessageDataDTO.cs" />
     <Compile Include="Models\TwilioAccountInfo.cs" />
     <Compile Include="DAL\TextThePeopleContext.cs" />
     <Compile Include="Global.asax.cs">

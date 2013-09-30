@@ -35,11 +35,11 @@ namespace TextThePeople.Controllers
         }
 
         [HttpPost]
-        public void Send(IEnumerable<string> recipients, string message)
+        public void Send(MessageDataDTO value)
         {
             var gen = new Random();
 
-            foreach (var r in recipients)
+            foreach (var r in value.Recipients)
             {
                 Persons p;
                 if (TryFindInDB(r, out p))
@@ -49,7 +49,7 @@ namespace TextThePeople.Controllers
                     try
                     {
                         var twilioClient = new TwilioRestClient(account.AccountSid, account.AuthToken);
-                        twilioClient.SendMessage(account.Phone, Normalize(p.PhoneNumber), message, new string[0]);
+                        twilioClient.SendMessage(account.Phone, Normalize(p.PhoneNumber), value.Message, new string[0]);
                     }
                     catch
                     {
