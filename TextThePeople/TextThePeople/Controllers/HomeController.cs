@@ -12,7 +12,7 @@ namespace TextThePeople.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Contact your tennants or landlords through phone based text messaging system.";
-
+            ViewBag.ReturnUrl = "Persons/Index";
             return View();
         }
 
@@ -28,5 +28,13 @@ namespace TextThePeople.Controllers
 
             return View();
         }
+
+        [AllowAnonymous]
+        public ActionResult Login(string returnUrl)
+        {
+            ViewBag.ReturnUrl = "Persons/Index";
+            return View();
+        }
+
     }
 }
