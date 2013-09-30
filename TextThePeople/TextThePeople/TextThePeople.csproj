@@ -207,6 +207,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Migrations\201309301508438_AddDataAnnotationsMig.cs" />
+    <Compile Include="Migrations\201309301508438_AddDataAnnotationsMig.Designer.cs">
+      <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\TwilioAccountInfo.cs" />
     <Compile Include="DAL\TextThePeopleContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -364,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201309301410557_NoNullsInPersonType.resx">
       <DependentUpon>201309301410557_NoNullsInPersonType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309301508438_AddDataAnnotationsMig.resx">
+      <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
