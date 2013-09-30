@@ -2,9 +2,10 @@
 
 
 <h2>Log into your account</h2>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+@using (Html.BeginForm("Login", "Account") ){
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
+
 
     <fieldset>
         <legend>Log in Form</legend>

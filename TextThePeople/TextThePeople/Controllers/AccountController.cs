@@ -22,7 +22,7 @@ namespace TextThePeople.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            ViewBag.ReturnUrl = "Persons/Index";
+            ViewBag.ReturnUrl = returnUrl;
             return View() ;
         }
 
