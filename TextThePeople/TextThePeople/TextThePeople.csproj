@@ -211,14 +211,11 @@
     <Compile Include="Migrations\201309301508438_AddDataAnnotationsMig.Designer.cs">
       <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Models\MessageDataDTO.cs" />
-=======
     <Compile Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.cs" />
     <Compile Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.Designer.cs">
       <DependentUpon>201309301559191_ConnectLoginDatabaseToServer.cs</DependentUpon>
     </Compile>
->>>>>>> e9207b5280a98ce043fb19463d6d03687b7c020c
     <Compile Include="Models\TwilioAccountInfo.cs" />
     <Compile Include="DAL\TextThePeopleContext.cs" />
     <Compile Include="Global.asax.cs">
