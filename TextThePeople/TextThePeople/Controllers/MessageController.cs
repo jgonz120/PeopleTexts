@@ -37,34 +37,44 @@ namespace TextThePeople.Controllers
         [HttpPost]
         public HttpStatusCode Send(MessageDataDTO value)
         {
-            int i = 0;
-            foreach (var r in value.Recipients)
+            if (Athenticate(value.AuthToken))
             {
-                Persons p;
-                if (TryFindInDB(r, out p))
+                int i = 0;
+                foreach (var r in value.Recipients)
                 {
-                    var account = credentials[_numbers[i++ % 4]];
-                    try
+                    Persons p;
+                    if (TryFindInDB(r, out p))
                     {
-                        var twilioClient = new TwilioRestClient(account.AccountSid, account.AuthToken);
-                        twilioClient.SendMessage(account.Phone, Normalize(p.PhoneNumber), value.Message, new string[0]);
+                        var account = credentials[_numbers[i++ % 4]];
+                        try
+                        {
+                            var twilioClient = new TwilioRestClient(account.AccountSid, account.AuthToken);
+                            twilioClient.SendMessage(account.Phone, Normalize(p.PhoneNumber), value.Message, new string[0]);
 
-                        db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = "No Error", Message = value.Message, Person = p });
+                            db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = "No Error", Message = value.Message, Person = p });
+                        }
+                        catch
+                        {
+                            db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = HttpStatusCode.BadRequest.ToString(), Message = value.Message, Person = p });
+                            return HttpStatusCode.BadRequest;
+                        }
                     }
-                    catch
+                    else
                     {
-                        db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = HttpStatusCode.BadRequest.ToString(), Message = value.Message, Person = p });
-                        return HttpStatusCode.BadRequest;
+                        db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = HttpStatusCode.NotFound.ToString(), Message = value.Message, Person = p });
+                        return HttpStatusCode.NotFound;
                     }
                 }
-                else
-                {
-                    db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = HttpStatusCode.NotFound.ToString(), Message = value.Message, Person = p });
-                    return HttpStatusCode.NotFound;
-                }
+
+                return HttpStatusCode.OK;
             }
 
-            return HttpStatusCode.OK;
+            return HttpStatusCode.Forbidden;
+        }
+
+        private bool Athenticate(Guid guid)
+        {
+            throw new NotImplementedException();
         }
 
         [NonAction]

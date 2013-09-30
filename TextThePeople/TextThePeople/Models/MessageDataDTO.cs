@@ -7,6 +7,7 @@ namespace TextThePeople.Models
 {
     public class MessageDataDTO
     {
+        public Guid AuthToken { get; }
         public IEnumerable<string> Recipients { get; set; }
         public string Message { get; set; }
     }
