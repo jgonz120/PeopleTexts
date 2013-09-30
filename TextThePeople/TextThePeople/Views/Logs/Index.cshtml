@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TextThePeople.Models.Logs>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateSet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Error)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateSet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Error)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.LogsId })
+        </td>
+    </tr>
+}
+
+</table>
