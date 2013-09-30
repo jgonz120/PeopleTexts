@@ -206,6 +206,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Models\TwilioAccountInfo.cs" />
     <Compile Include="DAL\TextThePeopleContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
