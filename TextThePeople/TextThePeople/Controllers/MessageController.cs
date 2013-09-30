@@ -35,7 +35,7 @@ namespace TextThePeople.Controllers
         }
 
         [HttpPost]
-        public void Send(MessageDataDTO value)
+        public HttpStatusCode Send(MessageDataDTO value)
         {
             int i = 0;
             foreach (var r in value.Recipients)
@@ -48,19 +48,23 @@ namespace TextThePeople.Controllers
                     {
                         var twilioClient = new TwilioRestClient(account.AccountSid, account.AuthToken);
                         twilioClient.SendMessage(account.Phone, Normalize(p.PhoneNumber), value.Message, new string[0]);
+
+                        db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = "No Error", Message = value.Message, Person = p });
                     }
                     catch
                     {
                         db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = HttpStatusCode.BadRequest.ToString(), Message = value.Message, Person = p });
-                        throw new HttpResponseException(HttpStatusCode.BadRequest);
+                        return HttpStatusCode.BadRequest;
                     }
                 }
                 else
                 {
                     db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = HttpStatusCode.NotFound.ToString(), Message = value.Message, Person = p });
-                    throw new HttpResponseException(HttpStatusCode.NotFound);
+                    return HttpStatusCode.NotFound;
                 }
             }
+
+            return HttpStatusCode.OK;
         }
 
         [NonAction]
@@ -92,6 +96,12 @@ namespace TextThePeople.Controllers
             if (sb.Length == 11) return sb.ToString();
             else return ""; // invalid number
 
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            db.SaveChanges();
+            base.Dispose(disposing);
         }
     }
 }
