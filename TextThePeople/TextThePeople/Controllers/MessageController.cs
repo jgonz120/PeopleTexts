@@ -71,7 +71,7 @@ namespace TextThePeople.Controllers
                                      where p.OSEntityPK.ToString() == key || p.PhoneNumber == key
                                      select p;
 
-                person = matchingEntity.Single();
+                person = matchingEntity.First(); // Change to Single
             }
             catch (InvalidOperationException e) { return false; }
             return true;
