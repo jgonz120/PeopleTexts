@@ -16,13 +16,13 @@ namespace TextThePeople.Controllers
         TextThePeopleContext db;
         private Dictionary<string, TwilioAccountInfo> credentials = new Dictionary<string, TwilioAccountInfo>()
         {
-            {"+13059096944", new TwilioAccountInfo(){Phone = "+13059096944", AccountSid = "AC3c18b86d6c4941dc9ea2c15f090f6d03", AuthToken = "3a401907393636c13902e6ef930a0e76"}}, // adrian
-            {"+19542411967", new TwilioAccountInfo(){Phone = "+19542411967", AccountSid = "ACc2fca8682c1c54a181234efc4e1fe307", AuthToken = "6dc139931bac15710af5072925e2d4f1"}}, // jon
-            {"+17862320454", new TwilioAccountInfo(){Phone = "+17862320454", AccountSid = "AC8b61c811de18b2fb9f03540cb0a7b056", AuthToken = "86e9ac5b91a5afb73006067f1c30258b"}}, // rene
-            {"+19548839514", new TwilioAccountInfo(){Phone = "+19548839514", AccountSid = "ACd3277fec1228d5c50bd66dc910be1822 ", AuthToken = "f8b8e5cfe71b5fc1fac20109105555b2"}}, // laura
+            {"+13059096944", new TwilioAccountInfo(){ Phone = "+13059096944", AccountSid = "AC3c18b86d6c4941dc9ea2c15f090f6d03", AuthToken = "3a401907393636c13902e6ef930a0e76" }}, // adrian
+            {"+19542411967", new TwilioAccountInfo(){ Phone = "+19542411967", AccountSid = "ACc2fca8682c1c54a181234efc4e1fe307", AuthToken = "6dc139931bac15710af5072925e2d4f1" }}, // jon
+            {"+17862320454", new TwilioAccountInfo(){ Phone = "+17862320454", AccountSid = "AC8b61c811de18b2fb9f03540cb0a7b056", AuthToken = "86e9ac5b91a5afb73006067f1c30258b" }}, // rene
+            {"+19548839514", new TwilioAccountInfo(){ Phone = "+19548839514", AccountSid = "ACd3277fec1228d5c50bd66dc910be1822 ", AuthToken = "f8b8e5cfe71b5fc1fac20109105555b2" }}, // laura
         };
 
-        private string[] _numbers = new[] { "+13059096945", "+19542411967", "+17862320454", "+19548839514" };
+        private string[] _numbers = new[] { "+13059096944", "+19542411967", "+17862320454", "+19548839514" };
 
         public MessageController()
         {
@@ -37,15 +37,13 @@ namespace TextThePeople.Controllers
         [HttpPost]
         public void Send(MessageDataDTO value)
         {
-            var gen = new Random();
-
+            int i = 0;
             foreach (var r in value.Recipients)
             {
                 Persons p;
                 if (TryFindInDB(r, out p))
                 {
-                    int i = gen.Next(_numbers.Length);
-                    var account = credentials[_numbers[i]];
+                    var account = credentials[_numbers[i++ % 4]];
                     try
                     {
                         var twilioClient = new TwilioRestClient(account.AccountSid, account.AuthToken);
@@ -53,11 +51,15 @@ namespace TextThePeople.Controllers
                     }
                     catch
                     {
+                        db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = HttpStatusCode.BadRequest.ToString(), Message = value.Message, Person = p });
                         throw new HttpResponseException(HttpStatusCode.BadRequest);
                     }
                 }
                 else
+                {
+                    db.Logs.Add(new Logs() { DateSet = DateTime.Now, Error = HttpStatusCode.NotFound.ToString(), Message = value.Message, Person = p });
                     throw new HttpResponseException(HttpStatusCode.NotFound);
+                }
             }
         }
 
@@ -71,9 +73,12 @@ namespace TextThePeople.Controllers
                                      where p.OSEntityPK.ToString() == key || p.PhoneNumber == key
                                      select p;
 
-                person = matchingEntity.First(); // Change to Single
+                person = matchingEntity.Single();
             }
-            catch (InvalidOperationException e) { return false; }
+            catch (InvalidOperationException e) 
+            {
+                return false; 
+            }
             return true;
         }
 

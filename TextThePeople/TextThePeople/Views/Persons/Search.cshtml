@@ -6,16 +6,18 @@
 
 <h2>Search for Clients</h2>
 
-<p>
-    @using (Html.BeginForm("Search","Persons",FormMethod.Get))
-    {
-        <p> Phone Number: @Html.TextBox("SearchNumber")<br />
-            OSEntityPK: @Html.TextBox("OSIdentity")<br />
-            Person Type: @Html.TextBox("groupNumber")<br />
-            <input type="submit" value="Search" />
-        </p>
-    }
-</p>
+
+@using (Html.BeginForm("Search","Persons",FormMethod.Get))
+{
+    <div class="label">Phone Number:</div>  
+    <div class="searchBox">@Html.TextBox("SearchNumber", "", new{ @class="searchBox"})</div>
+    <div class="label">OSEntityPK: </div>
+    <div class="searchBox">@Html.TextBox("OSIdentity", "", new{ @class="searchBox"})</div>
+    <div class="label">Person Type: </div>
+    <div class="searchBox">@Html.TextBox("groupNumber", "", new{ @class="searchBox"})</div>
+    <input type="submit" value="Search" />
+}
+
 <table>
     <tr>
         <th>
