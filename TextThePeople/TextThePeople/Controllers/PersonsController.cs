@@ -117,7 +117,7 @@ namespace TextThePeople.Controllers
 
         //
         // POST: /Persons/Search
-        public ActionResult Search(string searchNumber, int OSIdentity = 0)
+        public ActionResult Search(string searchNumber, int OSIdentity = 0, int groupNumber = 0)
         {
             var people = from m in db.Persons
                          select m;
@@ -127,11 +127,16 @@ namespace TextThePeople.Controllers
                 people = people.Where(s => s.PhoneNumber.Contains(searchNumber));
             }
 
-            if (OSIdentity == null  || OSIdentity == 0)
+            if (OSIdentity != null && OSIdentity != 0)
+            {
+                people = people.Where(x => x.OSEntityPK == OSIdentity);
+            }
+
+            if (groupNumber == null || groupNumber == 0)
                 return View(people);
             else
             {
-                return View(people.Where(x => x.OSEntityPK == OSIdentity));
+                return View(people.Where(x => x.PersonType == groupNumber));
             }
 
         }

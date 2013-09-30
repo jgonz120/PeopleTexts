@@ -207,6 +207,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Migrations\201309301508438_AddDataAnnotationsMig.cs" />
+    <Compile Include="Migrations\201309301508438_AddDataAnnotationsMig.Designer.cs">
+      <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TwilioAccountInfo.cs" />
     <Compile Include="DAL\TextThePeopleContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -352,6 +357,7 @@
     <Content Include="Views\Persons\Edit.cshtml" />
     <Content Include="Views\Persons\Delete.cshtml" />
     <Content Include="Views\Error\PageNotFound.cshtml" />
+    <Content Include="Views\Persons\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,8 +373,13 @@
     <EmbeddedResource Include="Migrations\201309301410557_NoNullsInPersonType.resx">
       <DependentUpon>201309301410557_NoNullsInPersonType.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201309301524092_ConnectToLoginDB.resx">
       <DependentUpon>201309301524092_ConnectToLoginDB.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\201309301508438_AddDataAnnotationsMig.resx">
+      <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
+>>>>>>> d66ccd5030c081eff6ac5df7fd1eb4f862887212
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
