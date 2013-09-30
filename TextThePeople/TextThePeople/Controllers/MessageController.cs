@@ -35,8 +35,7 @@ namespace TextThePeople.Controllers
         }
 
         [HttpPost]
-        // POST api/groupmessage?from,recipients,message
-        public void Post(IEnumerable<string> recipients, string message)
+        public void Send(IEnumerable<string> recipients, string message)
         {
             var gen = new Random();
 
@@ -62,6 +61,7 @@ namespace TextThePeople.Controllers
             }
         }
 
+        [NonAction]
         private bool TryFindInDB(string key, out Persons person)
         {
             person = null;
@@ -77,6 +77,7 @@ namespace TextThePeople.Controllers
             return true;
         }
 
+        [NonAction]
         private string Normalize(string to)
         {
             var sb = new StringBuilder();
