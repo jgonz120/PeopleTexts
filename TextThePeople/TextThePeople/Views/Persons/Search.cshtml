@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TextThePeople.Models.Persons>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search for Clients</h2>
+
+<p>
+    @using (Html.BeginForm("Search","Persons",FormMethod.Get))
+    {
+        <p> Phone Number: @Html.TextBox("SearchNumber")<br />
+            OSEntityPK: @Html.TextBox("OSIdentity")<br />
+            <input type="submit" value="Search" />
+        </p>
+    }
+</p>
+<table>
+    <tr>
+        <th>
+            Person ID Number
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OSEntityPK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonsId })
+        </td>
+    </tr>
+}
+
+</table>

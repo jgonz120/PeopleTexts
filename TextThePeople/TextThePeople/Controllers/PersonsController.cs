@@ -115,6 +115,27 @@ namespace TextThePeople.Controllers
             return RedirectToAction("Index");
         }
 
+        //
+        // POST: /Persons/Search
+        public ActionResult Search(string searchNumber, int OSIdentity = 0)
+        {
+            var people = from m in db.Persons
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchNumber))
+            {
+                people = people.Where(s => s.PhoneNumber.Contains(searchNumber));
+            }
+
+            if (OSIdentity == null  || OSIdentity == 0)
+                return View(people);
+            else
+            {
+                return View(people.Where(x => x.OSEntityPK == OSIdentity));
+            }
+
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
