@@ -21,10 +21,13 @@
 <table>
     <tr>
         <th>
-            Person ID Number
+            Person ID:
         </th>
         <th>
-            Phone Number
+           Client Type:
+        </th>
+        <th>
+            Phone Number:
         </th>
         <th></th>
     </tr>
@@ -33,6 +36,15 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.OSEntityPK)
+        </td>
+        <td>
+            @if (item.PersonType == 1)
+            { 
+                <p>Property Owner</p>
+            }
+            else { 
+                <p>Tennant</p>
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PhoneNumber)
