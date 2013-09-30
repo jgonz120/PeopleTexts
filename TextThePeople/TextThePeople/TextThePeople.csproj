@@ -211,6 +211,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201309301335124_AddPersonTypeToDB.cs" />
+    <Compile Include="Migrations\201309301335124_AddPersonTypeToDB.Designer.cs">
+      <DependentUpon>201309301335124_AddPersonTypeToDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309301410557_NoNullsInPersonType.cs" />
+    <Compile Include="Migrations\201309301410557_NoNullsInPersonType.Designer.cs">
+      <DependentUpon>201309301410557_NoNullsInPersonType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Logs.cs" />
@@ -330,7 +338,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\_LoginForm.cshtml" />
     <Content Include="Views\Persons\Index.cshtml" />
     <Content Include="Views\Persons\Details.cshtml" />
@@ -345,6 +355,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201309301335124_AddPersonTypeToDB.resx">
+      <DependentUpon>201309301335124_AddPersonTypeToDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309301410557_NoNullsInPersonType.resx">
+      <DependentUpon>201309301410557_NoNullsInPersonType.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
