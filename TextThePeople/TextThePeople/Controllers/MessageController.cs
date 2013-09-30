@@ -72,9 +72,9 @@ namespace TextThePeople.Controllers
             return HttpStatusCode.Forbidden;
         }
 
-        private bool Athenticate(Guid guid)
+        private bool Athenticate(String guid)
         {
-            throw new NotImplementedException();
+            return guid == "customtokenforvalidationpurposes";
         }
 
         [NonAction]
