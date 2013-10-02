@@ -212,6 +212,10 @@
     <Compile Include="Migrations\201309301508438_AddDataAnnotationsMig.Designer.cs">
       <DependentUpon>201309301508438_AddDataAnnotationsMig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201309301856294_addedguid.cs" />
+    <Compile Include="Migrations\201309301856294_addedguid.Designer.cs">
+      <DependentUpon>201309301856294_addedguid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\MessageDataDTO.cs" />
     <Compile Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.cs" />
     <Compile Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.Designer.cs">
@@ -389,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201309301559191_ConnectLoginDatabaseToServer.resx">
       <DependentUpon>201309301559191_ConnectLoginDatabaseToServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309301856294_addedguid.resx">
+      <DependentUpon>201309301856294_addedguid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

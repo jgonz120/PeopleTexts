@@ -33,6 +33,12 @@ namespace TextThePeople.Controllers
         {
             db = context;
         }
+        [HttpGet]
+        public List<string> Get()
+        {
+            List<string> peeps = db.Persons.Select(x => x.PhoneNumber).ToList<string>();
+            return peeps;
+        }
 
         [HttpPost]
         public HttpStatusCode Send(MessageDataDTO value)
